@@ -77,7 +77,7 @@ class MecabSplitter(BaseSplitter):
         else:
             result = self.ctypes_libmecab.mecab_sparse_tostr(
                 self.ctypes_mecab, input.encode(self.dict_encode))
-        return result.split(' ')
+        return result.decode().split(' ')
 
     def init_native(self, options):
         # type: (Dict) -> None
